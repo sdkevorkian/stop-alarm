@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "stop-alarm",
   "version": "1.0.0",
   "description": "Created for a one-day MEAN hackathon",
@@ -10,6 +9,7 @@
     "express": "^4.15.3",
     "express-jwt": "^5.3.0",
     "jsonwebtoken": "^7.4.1",
+    "mongodb": "^2.2.26",
     "mongoose": "^4.9.10",
     "morgan": "^1.8.1",
     "path": "^0.12.7"
@@ -27,9 +27,8 @@
   "bugs": {
     "url": "https://github.com/sdkevorkian/stop-alarm/issues"
   },
-  "homepage": "https://github.com/sdkevorkian/stop-alarm#readme",
-}
-=======
+  "homepage": "https://github.com/sdkevorkian/stop-alarm#readme"
+},
     "name": "stop-alarm",
     "version": "1.0.0",
     "description": "Created for a one-day MEAN hackathon",
@@ -58,5 +57,3 @@
         "url": "https://github.com/sdkevorkian/stop-alarm/issues"
     },
     "homepage": "https://github.com/sdkevorkian/stop-alarm#readme"
-}
->>>>>>> 0761a09d5b26c49f929e788357acdb2d0d9be9e7

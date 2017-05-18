@@ -3,12 +3,12 @@ angular.module('BusServices', [])
 .factory('BusStop', ['$http', function($http) {
         return {
             showStop: function(id) {
-                return $http.get('/api/airplanes/' + id);
+                return $http.get('/api/stops/' + id);
             },
             showAllStops: function() {
                 // may need to add user input here? or make new service??
                 var req = {
-                    url: '/api/airplanes',
+                    url: '/api/stops',
                     method: 'GET'
                 };
                 return $http(req);

@@ -2,8 +2,17 @@ angular.module('BusCtrls', ['BusServices'])
     .controller('WelcomeCtrl', ['$scope', function($scope) {
 
     }])
-    .controller('AllStopsCtrl', ['$scope', function($scope) {
+    .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {
+        BusStop.showAllStops().then(function(res) {
+            var stopsFiltered = res.data.filter(function(stop) {
 
+                return stop.stop_name.includes('Pine');
+            });
+            $scope.stops = stopsFiltered;
+            console.log(stopsFiltered.length);
+        }).catch(function(res) {
+            $scope.stops = res;
+        });
     }])
     .controller('ShowCtrl', ['$scope', function($scope) {
 

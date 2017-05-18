@@ -12,28 +12,28 @@ app.config([
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'views/welcome.html'
-                    // controller: 'WelcomeCtrl'
+                templateUrl: 'views/welcome.html',
+                controller: 'WelcomeCtrl'
             })
             .state('allStops', {
                 url: '/stops',
-                templateUrl: 'views/allStops.html'
-                    // controller: 'AllStopsCtrl'
+                templateUrl: 'views/allStops.html',
+                controller: 'AllStopsCtrl'
             })
             .state('stopShow', {
                 url: '/stops/:id',
-                templateUrl: 'views/stopShow.html'
-                    // controller: 'ShowCtrl'
+                templateUrl: 'views/stopShow.html',
+                controller: 'ShowCtrl'
             })
             .state('signup', {
                 url: '/signup',
-                templateUrl: 'views/userSignup.html'
-                    // controller: 'SignupCtrl'
+                templateUrl: 'views/userSignup.html',
+                controller: 'SignupCtrl'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'views/userLogin.html'
-                    // controller: 'LoginCtrl'
+                templateUrl: 'views/userLogin.html',
+                controller: 'LoginCtrl'
             })
             .state('404', {
                 url: '/404',

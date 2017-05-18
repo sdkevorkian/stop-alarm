@@ -18,6 +18,8 @@ app.use(require('morgan')('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/users', require('./controllers/users.js'));
+app.use('/api/stops', require('./controllers/stops.js'));
+// need to change path above
 
 // app.use('API NAME', require('./controllers/CONTROLLERS NAME'))
 // need to change path above

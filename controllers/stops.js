@@ -13,5 +13,13 @@ router.route('/')
         });
     });
 
+router.route('/:id')
+    .get(function(req, res) {
+        Stop.findById(req.params.id, function(err, user) {
+            if (err) return res.status(500).send(err);
+
+            return res.send(user);
+        });
+    });
 
 module.exports = router;

@@ -6,7 +6,10 @@ var path = require('path');
 var mongoose = require('mongoose');
 var app = express();
 
+var User = require('./models/user');
 mongoose.connect('mongodb://localhost/stop_alarm');
+
+// mongoose.connect('mongodb://localhost/app');
 // may need to change this path
 
 app.use(bodyParser.json());
@@ -18,8 +21,8 @@ app.use('/api/users', require('./controllers/users.js'));
 app.use('/api/stops', require('./controllers/stops.js'));
 // need to change path above
 
-
-
+// app.use('API NAME', require('./controllers/CONTROLLERS NAME'))
+// need to change path above
 
 // * gets all routes
 app.get('/*', function(req, res) {

@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "Created for a one-day MEAN hackathon",
   "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-jwt": "^5.3.0",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.9.10",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +27,4 @@
     "url": "https://github.com/sdkevorkian/stop-alarm/issues"
   },
   "homepage": "https://github.com/sdkevorkian/stop-alarm#readme",
-  "dependencies": {
-    "bcrypt": "^1.0.2",
-    "mongoose": "^4.9.10"
-  }
 }

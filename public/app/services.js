@@ -1,4 +1,4 @@
-angular.module('BusSerives', [])
+angular.module('BusServices', [])
 
 .factory('BusStop', ['$http', function($http) {
     return {

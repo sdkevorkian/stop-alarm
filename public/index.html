@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
 
-<head ng-app="StopAlarm" ng-controller="BusCtrls">
+<head>
     <meta charset="utf-8">
     <meta name="description" content="Never miss your stop again.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stop Alarm</title>
+    <base href="/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
@@ -17,9 +19,8 @@
     <script src="app/services.js"></script>
 </head>
 
-<body>
+<body ng-app="StopAlarm">
     <div class="container">
-        <div ng-include="'public/views/navbar.html'"></div>
         <div ui-view></div>
     </div>
 </body>

@@ -180,7 +180,7 @@ route_id,route_short_name,route_desc
 100451,"556","Issaquah University District Northgate"
 100459,"218","Issaquah Hlnds Downtown"
 100469,"180","Auburn Sounder/Kent Sounder/Sea Tac/Burien"
-100473,"981","Lakeside School,
+100473,"981","Lakeside School,"
 100475,"157","Lake Meridian P&R to Downtown Seattle"
 100476,"244","Kenmore P&R to Overlake TC"
 100479,"LINK","LINK to Sea-Tac"

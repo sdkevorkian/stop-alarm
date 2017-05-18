@@ -1,1 +1,11 @@
-{{stops}}
+
+<div class="container">
+    <h1>Stop Search</h1>
+    <div class="search">
+        <input type="text" name="stopSearch" ng-model="stopSearch" id="stopsearch" placeholder="Search by single street name">
+        <input class="btn" type="submit" value="search">
+    </div>
+    <div class="search-results collection" ng-repeat="stop in stops">
+        <a ng-href="/stop/{{ stop._id }}" class="collection-item">{{ stop.stop_name }}</a>
+    </div>
+</div>

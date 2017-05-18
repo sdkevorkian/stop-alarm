@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+var mongoose = require("mongoose");
+=======
 /* global process, module */
 
 var express = require('express');
@@ -25,3 +28,4 @@ app.get('/*', function(req, res) {
 var server = app.listen(process.env.PORT || 3000);
 
 module.exports = server;
+>>>>>>> e78a38b8ea0bfe0865e53db0c51d4b35f32cfa50

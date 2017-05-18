@@ -1,0 +1,23 @@
+{
+  "name": "stop-alarm",
+  "version": "1.0.0",
+  "description": "Created for a one-day MEAN hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdkevorkian/stop-alarm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdkevorkian/stop-alarm/issues"
+  },
+  "homepage": "https://github.com/sdkevorkian/stop-alarm#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "mongoose": "^4.9.10"
+  }
+}

@@ -1,1 +1,16 @@
-
+<div class="container">
+    <div class="row">
+        <form ng-submit="userLogin()" class="col s12">
+            <legend>Log In</legend>
+            <div class="form-group">
+                <div class="input-field col s6">
+                    <input type="email" id="email" placeholder="Email Address" ng-model="user.email">
+                </div>
+                <div class="input-field col s6">
+                    <input type="password" id="password" placeholder="Password" ng-model="user.password">
+                </div>
+            </div>
+            <button type="submit" id="submit">Log In</button>
+        </form>
+    </div>
+</div>

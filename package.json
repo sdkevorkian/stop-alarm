@@ -19,13 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alainabuzas/stop-alarm.git"
+    "url": "git+https://github.com/sdkevorkian/stop-alarm.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alainabuzas/stop-alarm/issues"
+    "url": "https://github.com/sdkevorkian/stop-alarm/issues"
   },
-  "homepage": "https://github.com/alainabuzas/stop-alarm#readme"
+  "homepage": "https://github.com/sdkevorkian/stop-alarm#readme",
 }

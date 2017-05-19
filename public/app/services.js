@@ -6,7 +6,6 @@ angular.module('BusServices', [])
                 return $http.get('/api/stops/' + id);
             },
             showAllStops: function() {
-                // may need to add user input here? or make new service??
                 var req = {
                     url: '/api/stops',
                     method: 'GET'

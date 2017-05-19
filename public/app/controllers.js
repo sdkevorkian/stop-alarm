@@ -4,11 +4,11 @@ angular.module('BusCtrls', ['BusServices'])
     }])
     .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {
         $scope.searchStops = function() {
+            // puts to lowercase so that user can type as they want
             var searchTerm = $scope.stopSearch.toLowerCase();
             BusStop.showAllStops().then(function(res) {
                 var stopsFiltered = res.data.filter(function(stop) {
                     var thisStop = stop.stop_name.toLowerCase();
-
                     return thisStop.includes(searchTerm);
                 });
                 $scope.stops = stopsFiltered;
@@ -16,10 +16,11 @@ angular.module('BusCtrls', ['BusServices'])
                 $scope.stops = res;
             });
         };
-
     }])
-    .controller('ShowCtrl', ['$scope', function($scope) {
-
+    .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
+        BusStop.showStop($stateParams.id).then(function(res) {
+            $scope.stop = res.data;
+        });
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {
         $scope.user = {

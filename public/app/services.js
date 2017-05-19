@@ -12,17 +12,17 @@ angular.module('BusServices', [])
                 };
                 return $http(req);
             },
-            calcDistance: function(origin, destination) {
+            // calcDistance: function(origin, destination) {
 
-                var key = 'AIzaSyBGLbnbaRS5OktKaAZBOSWKho_D6GSfg4I';
-                var url = `https://maps.googleapis.com/maps/api/distancematrix/json?key=` + key + `&origins=${origin}&destinations=${destination},-122.290512&units=imperial`;
-                var req = {
-                    url: url,
-                    method: 'GET'
-                };
-                return $http(req);
+            //     var key = 'AIzaSyBGLbnbaRS5OktKaAZBOSWKho_D6GSfg4I';
+            //     var url = `https://maps.googleapis.com/maps/api/distancematrix/json?key=` + key + `&origins=${origin}&destinations=${destination},-122.290512&units=imperial`;
+            //     var req = {
+            //         url: url,
+            //         method: 'GET'
+            //     };
+            //     return $http(req);
 
-            }
+            // }
         };
     }])
     .factory('Auth', ['$window', function($window) {

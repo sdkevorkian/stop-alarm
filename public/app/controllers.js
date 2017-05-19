@@ -25,12 +25,15 @@ angular.module('BusCtrls', ['BusServices'])
     .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
         BusStop.showStop($stateParams.id).then(function(res) {
             $scope.stop = res.data;
-            var userLocation = '47.6685791,-122.2883';
-            var destination = `${$scope.stop.stop_lat},${$scope.stop.stop_lon}`;
-            BusStop.calcDistance(userLocation, destination).then(function(res) {
-                console.log(res.data);
-            }).catch(function(err) {
-                console.log(err);
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+
+                var userLocation = { lat: position.coords.latitude, lon: position.coords.longitude };
+                var destination = { lat: $scope.stop.stop_lat, lon: $scope.stop.stop_lon };
+
+                $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
+
+
             });
         });
     }])
@@ -68,3 +71,22 @@ angular.module('BusCtrls', ['BusServices'])
             });
         };
     }]);
+
+// helper functions
+function getDistanceFromLatLonInMi(lat1, lon1, lat2, lon2) {
+    var R = 3958.756; // Radius of the earth in km
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    console.log(dLon);
+    return d;
+}
+
+function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+}

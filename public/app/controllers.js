@@ -32,7 +32,7 @@ angular.module('BusCtrls', ['BusServices'])
                 var destination = { lat: $scope.stop.stop_lat, lon: $scope.stop.stop_lon };
 
                 $interval(function() {
-                    $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon);
+                    $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
                     if ($scope.distanceFromStop < 0.25) {
                         $scope.stopWithinRange = true;
                     }

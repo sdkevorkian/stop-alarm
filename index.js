@@ -27,6 +27,8 @@ app.use('/api/users', require('./controllers/users.js'));
 app.use('/api/stops', require('./controllers/stops.js'));
 // need to change path above with expressJWT when ready
 
+
+
 // * gets all routes
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));

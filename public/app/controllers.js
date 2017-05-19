@@ -18,6 +18,7 @@ angular.module('BusCtrls', ['BusServices'])
         };
     }])
     .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
+        $scope.mapSrc = "https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAPS_KEY&callback=initMap";
         BusStop.showStop($stateParams.id).then(function(res) {
             $scope.stop = res.data;
         });

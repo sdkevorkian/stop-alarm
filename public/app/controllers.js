@@ -18,7 +18,7 @@ angular.module('BusCtrls', ['BusServices'])
             $scope.stops = stopsFiltered;
             console.log(stopsFiltered.length);
         }).catch(function(res) {
-            +$scope.stops = res;
+            $scope.stops = res;
         });
     }])
 .controller('ShowCtrl', ['$scope', function($scope) {

@@ -22,17 +22,21 @@ angular.module('BusCtrls', ['BusServices'])
             });
         };
     }])
-    .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
+    .controller('ShowCtrl', ['$scope', '$stateParams', '$interval', 'BusStop', function($scope, $stateParams, $interval, BusStop) {
         BusStop.showStop($stateParams.id).then(function(res) {
             $scope.stop = res.data;
+            $scope.stopWithinRange = false;
             navigator.geolocation.getCurrentPosition(function(position) {
-
 
                 var userLocation = { lat: position.coords.latitude, lon: position.coords.longitude };
                 var destination = { lat: $scope.stop.stop_lat, lon: $scope.stop.stop_lon };
 
-                $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
-
+                $interval(function() {
+                    $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
+                    if ($scope.distanceFromStop < 0.25) {
+                        $scope.stopWithinRange = true;
+                    }
+                }, 1000);
 
             });
         });
@@ -83,7 +87,6 @@ function getDistanceFromLatLonInMi(lat1, lon1, lat2, lon2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
-    console.log(dLon);
     return d;
 }
 

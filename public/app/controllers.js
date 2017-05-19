@@ -17,9 +17,10 @@ angular.module('BusCtrls', ['BusServices'])
             });
         };
     }])
-
-.controller('ShowCtrl', ['$scope', function($scope) {
-
+    .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
+        BusStop.showStop($stateParams.id).then(function(res) {
+            $scope.stop = res.data;
+        });
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {
         $scope.user = {

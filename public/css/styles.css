@@ -1,16 +1,32 @@
-.container {
-    margin-top: 2em;
-}
-
-.snooze {
-    font-family: 'Bungee Inline', cursive;
-}
-
-.welcome {
-    margin-top: 8em;
-}
-
-.welcome-intro {
-    padding: 20px;
-    font-style: italic;
-}
+    .container {
+        margin-top: 2em;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: 'Bungee Inline', cursive;
+    }
+    
+    .welcome {
+        margin-top: 6em;
+    }
+    
+    .welcome-intro {
+        padding: 20px;
+        font-style: italic;
+    }
+    
+    .intro i {
+        font-size: 48px !important;
+    }
+    
+    .desktop-message {
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .desktop-message {
+            display: block;
+        }
+    }

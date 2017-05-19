@@ -1,6 +1,6 @@
 <nav>
     <div class="nav-wrapper indigo lighten-1">
-        <a href="/" class="brand-logo"><i class="material-icons">alarm</i></a>
+        <a href="/" class="brand-logo"><i class="material-icons">snooze</i></a>
         <ul class="right">
             <li><a href="/logout">Log Out</a></li>
         </ul>
@@ -8,13 +8,13 @@
 </nav>
 <div class="container">
     <h4>Search for your stop</h4>
-    <p>In the field below, enter ONE of the street names at your destination intersection.</p>
+    <p class="flow-text">In the field below, enter ONE of the street names at your destination intersection.</p>
     <div class="search row">
         <input type="text" name="stopSearch" ng-model="stopSearch" id="stopsearch" placeholder="Stop location">
         <input class="btn-large col s12 deep-orange lighten-1" type="submit" value="search" ng-click="searchStops()">
     </div>
     <div class="more-info">
-        <p>Need more information before you can search for your stop? Check out <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/maps/route.aspx">King County Transit's Route Maps</a> and <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/service-change.aspx">Service Change Info</a>.</p>
+        <p class="flow-text">Need more information before you can search for your stop? Check out <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/maps/route.aspx">King County Transit's Route Maps</a> and <a href="http://kingcounty.gov/depts/transportation/metro/schedules-maps/service-change.aspx">Service Change Info</a>.</p>
     </div>
     <div class="search-results collection" ng-repeat="stop in stops">
         <a ng-href="/stops/{{ stop._id }}" class="collection-item">{{ stop.stop_name }}</a>

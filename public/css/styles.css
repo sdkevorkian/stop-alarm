@@ -9,3 +9,8 @@
 .welcome {
     margin-top: 8em;
 }
+
+.welcome-intro {
+    padding: 20px;
+    font-style: italic;
+}

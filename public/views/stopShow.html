@@ -1,9 +1,9 @@
-<nav>
+<nav ng-controller="NavCtrl">
     <div class="nav-wrapper indigo lighten-1">
         <a href="/" class="brand-logo"><i class="material-icons">alarm</i></a>
         <ul class="right">
             <li><a href="/stops">Search</a></li>
-            <li><a href="/logout" ng-model="logout">Log Out</a></li>
+            <li><a ng-click="logout()">Log Out</a></li>
         </ul>
     </div>
 </nav>
@@ -11,12 +11,15 @@
     <div class="stop-info">
         <h4>Your stop is:</h4>
         <h5>{{ stop.stop_name}}</h5>
-        <p>{{ stop.stop_lat }}, {{ stop.stop_lon }}</p>
+        <p class="flow-text">Located at: {{ stop.stop_lat }}, {{ stop.stop_lon }}</p>
     </div>
     <div class="stop-map" id="map">
     </div>
     <div class="alarm-set center-align row">
-        <a href="#" class="btn-large col s12 deep-orange lighten-1">Set Alarm</a>
-        <p>{{distanceFromStop}} miles from stop</p>
-        <p>have we reached our stop?: {{stopWithinRange}}</p>
+        <a href="#" class="alarm-btn btn-large col s12 deep-orange lighten-1">Set Alarm</a>
     </div>
+    <div class="distance-messages">
+        <p class="distance-from-stop flow-text">You are {{distanceFromStop}} miles from {{ stop.stop_name}}</p>
+        <p class="within-range flow-text">Have we reached our stop?: {{stopWithinRange}}</p>
+    </div>
+</div>

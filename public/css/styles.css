@@ -25,6 +25,10 @@
         display: none;
     }
     
+    .distance-messages {
+        margin-top: 3em;
+    }
+    
     @media (min-width: 768px) {
         .desktop-message {
             display: block;

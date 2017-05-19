@@ -1,9 +1,10 @@
 angular.module('BusCtrls', ['BusServices'])
-    .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+    .controller('NavCtrl', ['$scope', '$location', 'Auth', function($scope, $location, Auth) {
         $scope.Auth = Auth;
         $scope.logout = function() {
-
+            Materialize.toast('You have logged out', 4000);
             Auth.removeToken();
+            $location.path('/');
         };
     }])
     .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {

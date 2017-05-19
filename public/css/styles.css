@@ -1,4 +1,11 @@
-ng-map {
-    height: 100px;
-    width: 100px;
+.container {
+    margin-top: 2em;
+}
+
+.snooze {
+    font-family: 'Bungee Inline', cursive;
+}
+
+.welcome {
+    margin-top: 8em;
 }

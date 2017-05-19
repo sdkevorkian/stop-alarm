@@ -7,6 +7,7 @@ angular.module('BusCtrls', ['BusServices'])
         };
     }])
     .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {
+        $(".button-collapse").sideNav();
         $scope.searchStops = function() {
             // puts to lowercase so that user can type as they want
             var searchTerm = $scope.stopSearch.toLowerCase();
@@ -43,7 +44,7 @@ angular.module('BusCtrls', ['BusServices'])
                 $http.post('/api/auth', $scope.user).then(function success(res) {
                     Auth.saveToken(res.data.token);
                     console.log('Token:', res.data.token);
-                    $location.path('/');
+                    $location.path('/stops');
                 }, function error(res) {
                     console.log(res);
                 });
@@ -61,7 +62,7 @@ angular.module('BusCtrls', ['BusServices'])
             $http.post('/api/auth', $scope.user).then(function success(res) {
                 Auth.saveToken(res.data.token);
                 console.log('Token:', res.data.token);
-                $location.path('/');
+                $location.path('/stops');
             }, function error(res) {
                 console.log(res);
             });

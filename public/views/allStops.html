@@ -1,11 +1,7 @@
 <nav>
     <div class="nav-wrapper indigo lighten-1">
         <a href="/" class="brand-logo"><i class="material-icons">alarm</i></a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="/logout">Log Out</a></li>
-        </ul>
-        <ul class="side-nav">
+        <ul class="right">
             <li><a href="/logout">Log Out</a></li>
         </ul>
     </div>
@@ -15,7 +11,7 @@
     <p>In the field below, enter ONE of the street names at your destination intersection.</p>
     <div class="search row">
         <input type="text" name="stopSearch" ng-model="stopSearch" id="stopsearch" placeholder="Stop location">
-        <input class="btn col s12" type="submit" value="search" ng-click="searchStops()">
+        <input class="btn-large col s12 deep-orange lighten-1" type="submit" value="search" ng-click="searchStops()">
     </div>
     <div class="search-results collection" ng-repeat="stop in stops">
         <a ng-href="/stops/{{ stop._id }}" class="collection-item">{{ stop.stop_name }}</a>

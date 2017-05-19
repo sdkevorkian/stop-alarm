@@ -1,25 +1,22 @@
 <nav>
     <div class="nav-wrapper indigo lighten-1">
         <a href="/" class="brand-logo"><i class="material-icons">alarm</i></a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right">
             <li><a href="/stops">Search</a></li>
-            <li><a href="/logout">Log Out</a></li>
-        </ul>
-        <ul class="side-nav">
-            <li><a href="/stops">Search</a></li>
-            <li><a href="/logout">Log Out</a></li>
+            <li><a href="/logout" ng-model="logout">Log Out</a></li>
         </ul>
     </div>
 </nav>
 <div class="container">
     <div class="stop-info">
+        <h4>Your stop is:</h4>
         <h5>{{ stop.stop_name}}</h5>
         <p>{{ stop.stop_lat }}, {{ stop.stop_lon }}</p>
     </div>
     <div class="stop-map" id="map">
     </div>
-    <div class="alarm-set center-align">
-        <a href="#" class="btn deep-orange lighten-1">Set Alarm</a> {{distanceFromStop}}
+    <div class="alarm-set center-align row">
+        <a href="#" class="btn-large col s12 deep-orange lighten-1">Set Alarm</a>
+      {{distanceFromStop}}
     </div>
 </div>

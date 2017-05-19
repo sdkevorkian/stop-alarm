@@ -1,5 +1,5 @@
 /* global process, module */
-
+require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -11,7 +11,6 @@ var jwt = require('jsonwebtoken');
 var secret = process.env.JWT_SECRET;
 
 var app = express();
-
 
 var User = require('./models/user');
 mongoose.connect('mongodb://localhost/stop_alarm');

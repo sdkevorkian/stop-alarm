@@ -12,8 +12,7 @@ app.config([
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'views/welcome.html',
-                controller: 'WelcomeCtrl'
+                templateUrl: 'views/welcome.html'
             })
             .state('allStops', {
                 url: '/stops',

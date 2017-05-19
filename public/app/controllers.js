@@ -3,18 +3,25 @@ angular.module('BusCtrls', ['BusServices'])
 
     }])
     .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {
-        BusStop.showAllStops().then(function(res) {
-            var stopsFiltered = res.data.filter(function(stop) {
-
-                return stop.stop_name.includes('Pine');
-            });
+            $scope.searchStops = function() {
+                var searchTerm = $scope.stopSearch.toLowerCase();
+                BusStop.showAllStops().then(function(res) {
+                    var stopsFiltered = res.data.filter(function(stop) {
+                        var thisStop = stop.stop_name.toLowerCase();
+                        return thisStop.includes(searchTerm);
+                    });
+                    $scope.stops = stopsFiltered;
+                }).catch(function(res) {
+                    $scope.stops = res;
+                });
+            };
             $scope.stops = stopsFiltered;
             console.log(stopsFiltered.length);
         }).catch(function(res) {
-            $scope.stops = res;
+            +$scope.stops = res;
         });
     }])
-    .controller('ShowCtrl', ['$scope', function($scope) {
+.controller('ShowCtrl', ['$scope', function($scope) {
 
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {

@@ -1,6 +1,10 @@
 angular.module('BusCtrls', ['BusServices'])
-    .controller('WelcomeCtrl', ['$scope', function($scope) {
+    .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+        $scope.Auth = Auth;
+        $scope.logout = function() {
 
+            Auth.removeToken();
+        };
     }])
     .controller('AllStopsCtrl', ['$scope', 'BusStop', function($scope, BusStop) {
         $scope.searchStops = function() {
@@ -18,9 +22,15 @@ angular.module('BusCtrls', ['BusServices'])
         };
     }])
     .controller('ShowCtrl', ['$scope', '$stateParams', 'BusStop', function($scope, $stateParams, BusStop) {
-        $scope.mapSrc = "https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAPS_KEY&callback=initMap";
         BusStop.showStop($stateParams.id).then(function(res) {
             $scope.stop = res.data;
+            var userLocation = '47.6685791,-122.2883';
+            var destination = `${$scope.stop.stop_lat},${$scope.stop.stop_lon}`;
+            BusStop.calcDistance(userLocation, destination).then(function(res) {
+                console.log(res.data);
+            }).catch(function(err) {
+                console.log(err);
+            });
         });
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {

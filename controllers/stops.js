@@ -1,5 +1,6 @@
 var express = require('express');
 var Stop = require('../models/stop');
+var request = require("request");
 var router = express.Router();
 
 
@@ -23,3 +24,8 @@ router.route('/:id')
     });
 
 module.exports = router;
+
+
+
+
+// var url = `https://maps.googleapis.com/maps/api/distancematrix/json?key=` + key + `&origins=${origin}&destinations=${destination},-122.290512&units=imperial`;

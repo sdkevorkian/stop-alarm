@@ -69,7 +69,6 @@ angular.module('BusCtrls', ['BusServices'])
         $scope.userLogin = function() {
             $http.post('/api/auth', $scope.user).then(function success(res) {
                 Auth.saveToken(res.data.token);
-                console.log('Token:', res.data.token);
                 $location.path('/stops');
             }, function error(res) {
                 console.log(res);

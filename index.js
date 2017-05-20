@@ -13,7 +13,7 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 var User = require('./models/user');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/stop_alarm');
+mongoose.connect(process.env.MONGOLAB_GOLD_URI || 'mongodb://localhost/stop_alarm');
 
 // mongoose.connect('mongodb://localhost/app');
 // may need to change this path

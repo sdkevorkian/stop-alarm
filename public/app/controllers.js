@@ -50,7 +50,6 @@ angular.module('BusCtrls', ['BusServices'])
                         audio.play();
                     }
                 }, 1000);
-
             });
         });
     }])

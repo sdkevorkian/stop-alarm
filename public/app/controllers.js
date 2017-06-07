@@ -37,18 +37,17 @@ angular.module('BusCtrls', ['BusServices'])
                 audio.pause();
                 $scope.alarmSet = false;
             };
-
+            // gets position from browser-NOTE will not work iif not set to https
             navigator.geolocation.getCurrentPosition(function(position) {
 
                 var userLocation = { lat: position.coords.latitude, lon: position.coords.longitude };
                 var destination = { lat: $scope.stop.stop_lat, lon: $scope.stop.stop_lon };
-
+                // on interval, checks if close to stop and if so will display and play audio
                 $interval(function() {
                     $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
                     if ($scope.distanceFromStop < 0.25 && $scope.alarmSet) {
                         $scope.stopWithinRange = true;
                         audio.play();
-
                     }
                 }, 1000);
 

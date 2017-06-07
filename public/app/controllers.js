@@ -27,6 +27,17 @@ angular.module('BusCtrls', ['BusServices'])
         BusStop.showStop($stateParams.id).then(function(res) {
             $scope.stop = res.data;
             $scope.stopWithinRange = false;
+            var audio = document.getElementById('alarm-sound');
+
+            $scope.setAlarm = function() {
+                $scope.alarmSet = true;
+            };
+
+            $scope.stopAlarm = function() {
+                audio.pause();
+                $scope.alarmSet = false;
+            };
+
             navigator.geolocation.getCurrentPosition(function(position) {
 
                 var userLocation = { lat: position.coords.latitude, lon: position.coords.longitude };
@@ -34,8 +45,10 @@ angular.module('BusCtrls', ['BusServices'])
 
                 $interval(function() {
                     $scope.distanceFromStop = getDistanceFromLatLonInMi(userLocation.lat, userLocation.lon, destination.lat, destination.lon).toFixed(2);
-                    if ($scope.distanceFromStop < 0.25) {
+                    if ($scope.distanceFromStop < 0.25 && $scope.alarmSet) {
                         $scope.stopWithinRange = true;
+                        audio.play();
+
                     }
                 }, 1000);
 

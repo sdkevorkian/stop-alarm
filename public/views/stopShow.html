@@ -14,6 +14,7 @@
         <div class="distance-messages" ng-show="alarmSet">
             <p class="distance-from-stop flow-text">You are {{distanceFromStop}} miles from your stop.</p>
             <p class="within-range flow-text" ng-show="stopWithinRange">You've reached your stop!</p>
+            <img src="css/images/alarm.gif" ng-show="stopWithinRange">
             <audio id="alarm-sound">
                 <source src="sounds/alarm.wav" type="audio/wav">
             </audio>
